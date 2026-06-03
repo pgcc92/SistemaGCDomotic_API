@@ -88,7 +88,7 @@ final class ComisionesController
             $select[] = 'cl.razon_social as cliente_razon_social';
             $select[] = 'cl.tipo_documento as cliente_tipo_documento';
             $select[] = 'cl.numero_documento as cliente_numero_documento';
-            $select[] = DB::raw("coalesce(nullif(v.cliente_razon, ''), nullif(cl.razon_social, ''), nullif(cl.nombre, ''), nullif(cl.telefono, ''), case when v.cliente_id is not null then 'Cliente #' || v.cliente_id::text else null end) as cliente_nombre");
+            $select[] = DB::raw("coalesce(nullif(v.cliente_razon, ''), nullif(cl.nombre, ''), nullif(cl.razon_social, ''), nullif(cl.telefono, ''), case when v.cliente_id is not null then 'Cliente #' || v.cliente_id::text else null end) as cliente_nombre");
         } else {
             $select[] = DB::raw("coalesce(nullif(v.cliente_razon, ''), case when v.cliente_id is not null then 'Cliente #' || v.cliente_id::text else null end) as cliente_nombre");
         }
@@ -172,7 +172,7 @@ final class ComisionesController
             $select[] = 'cl.razon_social as cliente_razon_social';
             $select[] = 'cl.tipo_documento as cliente_tipo_documento';
             $select[] = 'cl.numero_documento as cliente_numero_documento';
-            $select[] = DB::raw("coalesce(nullif(v.cliente_razon, ''), nullif(cl.razon_social, ''), nullif(cl.nombre, ''), nullif(cl.telefono, ''), case when v.cliente_id is not null then 'Cliente #' || v.cliente_id::text else null end) as cliente_nombre");
+            $select[] = DB::raw("coalesce(nullif(v.cliente_razon, ''), nullif(cl.nombre, ''), nullif(cl.razon_social, ''), nullif(cl.telefono, ''), case when v.cliente_id is not null then 'Cliente #' || v.cliente_id::text else null end) as cliente_nombre");
         } else {
             $select[] = DB::raw("coalesce(nullif(v.cliente_razon, ''), case when v.cliente_id is not null then 'Cliente #' || v.cliente_id::text else null end) as cliente_nombre");
         }
